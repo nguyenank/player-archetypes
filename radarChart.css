@@ -1,0 +1,86 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  fill: #242424;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+  cursor: default;
+}
+
+.legend {
+  font-family: 'Raleway', sans-serif;
+  fill: #333333;
+}
+
+.tooltip {
+  fill: #333333;
+}
+
+.player-info {
+  padding: .2em;
+  font-size: 1.2em;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#selectLeft {
+font-size: 1.5em;
+background-color: rgba(18,145,143,0.4);
+}
+
+#left-player {
+  background-color: rgba(18,145,143,0.4);
+  border: .2em solid rgba(18,145,143,1);
+}
+
+#selectRight {
+font-size: 1.5em;
+background-color: rgba(234,118,72,0.4);
+}
+
+#right-player {
+  background-color: rgba(234,118,72,0.4);
+  border: .2em solid rgba(234,118,72,1);
+}
+
+hr {
+  border: 0;
+  height: .15em;
+  background: rgba(0,0,0,.1);
+}
+
+.player-info {
+  text-shadow: none;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em;
+}
+
+
+.bold {
+  font-weight: bold;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.radarChart {
+  min-width: 50%;
+  flex-grow: 3;
+}
+
+h1 {
+  font-size: 4em;
+}
