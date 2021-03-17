@@ -8,6 +8,19 @@ body {
   cursor: default;
 }
 
+@media (max-width: 900px) {
+  .flexbox {
+    display:block;
+  }
+  .radarChart {
+    width:100%;
+  }
+  .vertical-align {
+    align-items: center;
+    width:100%;
+  }
+}
+
 .legend {
   font-family: 'Raleway', sans-serif;
   fill: #333333;
@@ -19,7 +32,7 @@ body {
 
 .player-info {
   padding: .2em;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .flexbox {
@@ -77,8 +90,8 @@ hr {
 }
 
 .radarChart {
-  min-width: 50%;
-  flex-grow: 3;
+  min-width: 45%;
+  flex-grow: 2;
 }
 
 h1 {
