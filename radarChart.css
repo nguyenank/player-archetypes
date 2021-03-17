@@ -1,99 +1,108 @@
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  fill: #242424;
-  text-align: center;
-  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
-  cursor: default;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    fill: #242424;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+    cursor: default;
 }
 
 @media (max-width: 900px) {
-  .flexbox {
-    display:block;
-  }
-  .radarChart {
-    width:100%;
-  }
-  .vertical-align {
-    align-items: center;
-    width:100%;
-  }
+    .flexbox {
+        display: block;
+    }
+    .radarChart {
+        width: 100%;
+    }
+    .vertical-align {
+        align-items: center;
+        width: 100%;
+    }
 }
 
 .legend {
-  font-family: 'Raleway', sans-serif;
-  fill: #333333;
+    font-family: "Raleway", sans-serif;
+    fill: #333333;
 }
 
 .tooltip {
-  fill: #333333;
+    fill: #333333;
 }
 
 .player-info {
-  padding: .2em;
-  font-size: 1.1em;
+    padding: 0.2em;
+    font-size: 1.1em;
 }
 
 .flexbox {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #selectLeft {
-font-size: 1.5em;
-background-color: rgba(18,145,143,0.4);
+    font-size: 1.5em;
+    background-color: rgba(18, 145, 143, 0.4);
 }
 
 #left-player {
-  background-color: rgba(18,145,143,0.4);
-  border: .2em solid rgba(18,145,143,1);
+    background-color: rgba(18, 145, 143, 0.4);
+    border: 0.2em solid rgba(18, 145, 143, 1);
 }
 
 #selectRight {
-font-size: 1.5em;
-background-color: rgba(234,118,72,0.4);
+    font-size: 1.5em;
+    background-color: rgba(234, 118, 72, 0.4);
 }
 
 #right-player {
-  background-color: rgba(234,118,72,0.4);
-  border: .2em solid rgba(234,118,72,1);
+    background-color: rgba(234, 118, 72, 0.4);
+    border: 0.2em solid rgba(234, 118, 72, 1);
+}
+
+#select-three {
+    font-size: 1.5em;
+    background-color: rgba(83, 36, 107, 0.4);
+}
+
+#player-three {
+    background-color: rgba(83, 36, 107, 0.4);
+    border: 0.2em solid rgba(83, 36, 107, 1);
 }
 
 hr {
-  border: 0;
-  height: .15em;
-  background: rgba(0,0,0,.1);
+    border: 0;
+    height: 0.15em;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .player-info {
-  text-shadow: none;
-  border-radius: 1em;
-  padding: 1em;
-  margin: 1em;
+    text-shadow: none;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
 }
 
-
 .bold {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .vertical-align {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .radarChart {
-  min-width: 45%;
-  flex-grow: 2;
+    min-width: 45%;
+    flex-grow: 2;
 }
 
 h1 {
-  font-size: 4em;
+    font-size: 4em;
 }
