@@ -32,10 +32,14 @@ function createPlayerInfo(id) {
     pI.append("span")
         .attr("class", "bold player-team")
         .text("Team");
+
     pI.append("hr");
+
     createPlayerRow(id, "Position: ", "player-position");
     createPlayerRow(id, "Archetype: ", "player-archetype");
+
     pI.append("hr");
+
     createPlayerRow(id, "Shot Index: ", "shot-index");
     createPlayerRow(id, "PSA Index: ", "psa-index");
     createPlayerRow(id, "Passing Index: ", "passing-index");
