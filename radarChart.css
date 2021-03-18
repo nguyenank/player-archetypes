@@ -1,34 +1,63 @@
+/* default radar chart styling */
 body {
     font-family: "Open Sans", sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 300;
     fill: #242424;
     text-align: center;
-    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
     cursor: default;
 }
 
-@media (max-width: 900px) {
-    .flexbox {
-        display: block;
-    }
-    .radarChart {
-        width: 100%;
-    }
-}
-
 .legend {
-    font-family: "Raleway", sans-serif;
-    fill: #333333;
+    font-weight: 400;
 }
 
 .tooltip {
     fill: #333333;
 }
 
+/* responsive sizing for radar chart */
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radar-chart {
+    flex-basis: 100%;
+}
+
+.radar-chart-wrapper {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .main {
+        display: inline-block;
+        width: 100%;
+    }
+    .radar-chart-wrapper {
+        display: block;
+        width: 100%;
+    }
+    .radar-chart {
+        width: 100%;
+    }
+}
+
+/* Player Info Styling  */
+
 .player-info {
     padding: 0.2em;
     font-size: 1.1em;
+    text-shadow: none;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
 }
 
 #player-one-select {
@@ -67,47 +96,14 @@ hr {
     background: rgba(0, 0, 0, 0.1);
 }
 
-.player-info {
-    text-shadow: none;
-    border-radius: 1em;
-    padding: 1em;
-    margin: 1em;
-}
-
-.bold {
-    font-weight: bold;
-}
+/* assorted */
 
 .header {
     display: flex;
     justify-content: center;
+    font-size: 2.5em;
 }
 
-.flexbox {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-}
-
-.flexbox-column {
-    /* background-color: blue; */
-    flex-basis: 0;
-}
-
-.radar-chart-wrapper {
-    /* background-color: red; */
-    flex-basis: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.radarChart {
-    width: 45%;
-    flex-basis: 70%;
-    /* background-color: green; */
-}
-
-h1 {
-    font-size: 4em;
+.bold {
+    font-weight: 400;
 }

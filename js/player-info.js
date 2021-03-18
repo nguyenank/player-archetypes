@@ -30,8 +30,7 @@ function createPlayerInfo(id) {
     pI.append("hr");
 
     pI.append("span")
-        .attr("class", "bold")
-        .attr("class", "player-team")
+        .attr("class", "bold player-team")
         .text("Team");
     pI.append("hr");
     createPlayerRow(id, "Position: ", "player-position");

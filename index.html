@@ -32,56 +32,30 @@
         <div class="header">
             <h1>Women's Hockey Archetypes</h1>
         </div>
-        <div class="flexbox">
-            <div class="flexbox-column">
+        <div class="main">
+            <div class="player-info">
                 <div id="player-one-info" class="player-info"></div>
                 <div id="player-two-info" class="player-info"></div>
                 <div id="player-three-info" class="player-info"></div>
             </div>
             <div class="radar-chart-wrapper">
-                <div class="radarChart"></div>
+                <div class="radar-chart"></div>
             </div>
         </div>
         <script type="module" src="index.js"></script>
         <script type="module">
-            /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
+            import { index } from "./index.js";
 
-            //////////////////////////////////////////////////////////////
-            //////////////////////// Set-Up //////////////////////////////
-            //////////////////////////////////////////////////////////////
-            import { layout } from "./index.js";
-            // var margin = { top: 100, right: 100, bottom: 100, left: 100 },
-            //     width =
-            //         Math.min(700, window.innerWidth - 10) -
-            //         margin.left -
-            //         margin.right,
-            //     height = Math.min(
-            //         width,
-            //         window.innerHeight - margin.top - margin.bottom - 20
-            //     );
-            //
-            var margin = { top: 100, right: 100, bottom: 100, left: 100 },
-                height = window.innerHeight - margin.top - margin.bottom - 20,
-                width = height;
-            //////////////////////////////////////////////////////////////
-            //////////////////// Draw the Chart //////////////////////////
-            //////////////////////////////////////////////////////////////
-
-            var element = d3.select(".flexbox-column").node();
-            console.log(element.getBoundingClientRect().height);
-            console.log(element.getBoundingClientRect().width);
             var radarChartOptions = {
-                w: 400,
-                h: height,
-                margin: margin,
+                margin: { top: 125, right: 125, bottom: 125, left: 125 },
                 maxValue: 1,
                 levels: 5,
                 color: ["#35aba9", "#ea8e48", "#9659b5"],
                 roundStrokes: false,
                 opacityArea: 0.4,
             };
-            //Call function to draw the Radar chart
-            layout(radarChartOptions);
+
+            index(radarChartOptions);
         </script>
         <hr />
     </body>

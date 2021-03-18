@@ -14,7 +14,7 @@ import {
 } from "./js/player-info.js";
 import { radarChart } from "./js/radar-chart.js";
 
-function layout(radarChartOptions) {
+function index(radarChartOptions) {
     function transformRow(row) {
         let indices = [
             "Shot Index",
@@ -59,7 +59,7 @@ function layout(radarChartOptions) {
         createPlayerInfo("#player-two-info");
         createPlayerInfo("#player-three-info");
         updatePlayerInfo("#player-one-info", data[0]);
-        radarChart(".radarChart", firstRows, radarChartOptions);
+        radarChart(".radar-chart", firstRows, radarChartOptions);
 
         function update() {
             var playerOneSelect = d3
@@ -76,7 +76,7 @@ function layout(radarChartOptions) {
                 transformRow(data[playerTwoSelect]),
                 transformRow(data[playerThreeSelect]),
             ];
-            radarChart(".radarChart", rows, radarChartOptions);
+            radarChart(".radar-chart", rows, radarChartOptions);
             updatePlayerInfo("#player-one-info", data[playerOneSelect]);
             if (playerTwoSelect) {
                 updatePlayerInfo("#player-two-info", data[playerTwoSelect]);
@@ -92,4 +92,4 @@ function layout(radarChartOptions) {
     });
 }
 
-export { layout };
+export { index };
