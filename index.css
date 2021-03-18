@@ -56,7 +56,6 @@ body {
 /* Player Info Styling  */
 
 .player-info {
-    padding: 0.2em;
     font-size: 1.1em;
     text-shadow: none;
     border-radius: 1em;
@@ -94,9 +93,25 @@ body {
     border: 0.2em solid rgba(150, 89, 181, 1);
 }
 
+/* filter Styling */
+#filter {
+    font-size: 1.1em;
+    text-shadow: none;
+    border-radius: 1em;
+    margin: none;
+    width: 100%;
+    padding: 0.5em;
+    background-color: #ededed;
+    border: 0.2em solid #dedede;
+    color: #737373;
+}
+
+.button-wrapper {
+    padding: 0em 1em;
+}
+
 hr {
     border: 0;
-    height: 0.15em;
     background: rgba(0, 0, 0, 0.1);
 }
 
