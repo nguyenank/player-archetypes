@@ -45,7 +45,7 @@ body {
     background-color: rgba(53, 171, 169, 0.4);
 }
 
-#player-one {
+#player-one-info {
     background-color: rgba(53, 171, 169, 0.4);
     border: 0.2em solid rgba(53, 171, 169, 1);
 }
@@ -55,7 +55,7 @@ body {
     background-color: rgba(234, 142, 72, 0.4);
 }
 
-#player-two {
+#player-two-info {
     background-color: rgba(234, 142, 72, 0.4);
     border: 0.2em solid rgba(234, 142, 72, 1);
 }
@@ -65,7 +65,7 @@ body {
     background-color: rgba(150, 89, 181, 0.4);
 }
 
-#player-three {
+#player-three-info {
     background-color: rgba(150, 89, 181, 0.4);
     border: 0.2em solid rgba(150, 89, 181, 1);
 }
