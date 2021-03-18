@@ -10,10 +10,13 @@ body {
 
 .legend {
     font-weight: 400;
+    font-size: 1.1em;
 }
 
 .tooltip {
     fill: #333333;
+    font-size: 1.1em;
+    font-weight: 400;
 }
 
 /* responsive sizing for radar chart */

@@ -6,38 +6,39 @@
 /////////////////////////////////////////////////////////
 //// Modified by An Nguyen //////////////////////////////
 
-function radarChart(id, data, options) {
+function radarChart(id, data) {
     var cfg = {
         w: 600, //Width of the circle
         h: 600, //Height of the circle
         margin: { top: 125, right: 125, bottom: 125, left: 125 }, //The margins of the SVG
         levels: 5, //How many levels or inner circles should there be drawn
-        maxValue: 1, //What is the value that the biggest circle will represent
         labelFactor: 1.25, //How much farther than the radius of the outer circle should the labels be placed
-        wrapWidth: 60, //The number of pixels after which a label needs to be given a new line
+        wrapWidth: 80, //The number of pixels after which a label needs to be given a new line
         opacityArea: 0.4, //The opacity of the area of the blob
         dotRadius: 4, //The size of the colored circles of each blog
         opacityCircles: 0.15, //The opacity of the circles of each blob
         strokeWidth: 2, //The width of the stroke around each blob
         roundStrokes: false, //If true the area and stroke will follow a round path (cardinal-closed)
-        color: ["#35aba9", "#ea8e48", "#9659b5"], //Color function
+        color: ["#35aba9", "#ea8e48", "#9659b5"], //Color function for blobs
     };
-
-    //Put all of the options into a variable called cfg
-    if ("undefined" !== typeof options) {
-        for (var i in options) {
-            if ("undefined" !== typeof options[i]) {
-                cfg[i] = options[i];
-            }
-        } //for i
-    } //if
-
+    // random style things I pulled out of the code below
+    var style = {
+        circleFill: "#ededed",
+        circleStroke: "#dedede",
+        axisStrokeWidth: ".2em",
+        axisFontSize: "1em",
+        axisFontColor: "#737373",
+        axisDY: ".4em",
+        labelDY: "-.5em",
+    };
     /////////////////////////////////////////////////////////
     ///////////////////////// Calculations///////////////////
     /////////////////////////////////////////////////////////
 
-    //If actual < 0.25, maxValue = 0.5; if actual > 1, maxValue = actual; otherwise actual = default (1)
-    var maxValue = cfg.maxValue;
+    // If actual < 0.1, maxValue = 0.2
+    // if actual > 1, maxValue = actual
+    // otherwise actual = 1
+    var maxValue = 1;
     var actualMax = d3.max(data, function(i) {
         return d3.max(
             i.map(function(o) {
@@ -96,25 +97,6 @@ function radarChart(id, data, options) {
         );
 
     /////////////////////////////////////////////////////////
-    ////////// Glow filter for some extra pizzazz ///////////
-    /////////////////////////////////////////////////////////
-
-    //Filter for the outside glow
-    var filter = g
-            .append("defs")
-            .append("filter")
-            .attr("id", "glow"),
-        feGaussianBlur = filter
-            .append("feGaussianBlur")
-            .attr("stdDeviation", "2.5")
-            .attr("result", "coloredBlur"),
-        feMerge = filter.append("feMerge"),
-        feMergeNode_1 = feMerge.append("feMergeNode").attr("in", "coloredBlur"),
-        feMergeNode_2 = feMerge
-            .append("feMergeNode")
-            .attr("in", "SourceGraphic");
-
-    /////////////////////////////////////////////////////////
     /////////////// Draw the Circular grid //////////////////
     /////////////////////////////////////////////////////////
 
@@ -131,10 +113,9 @@ function radarChart(id, data, options) {
         .attr("r", function(d, i) {
             return (radius / cfg.levels) * d;
         })
-        .style("fill", "#ededed")
-        .style("stroke", "#dedede")
+        .style("fill", style.circleFill)
+        .style("stroke", style.circleStroke)
         .style("fill-opacity", cfg.opacityCircles);
-    // .style("filter" , "url(#glow)");
 
     //Text indicating at what number each level is
     axisGrid
@@ -147,9 +128,9 @@ function radarChart(id, data, options) {
         .attr("y", function(d) {
             return (-d * radius) / cfg.levels;
         })
-        .attr("dy", "0.4em")
-        .style("font-size", "10px")
-        .attr("fill", "#737373")
+        .attr("dy", style.axisDY)
+        .style("font-size", style.axisFontSize)
+        .attr("fill", style.axisFontColor)
         .text(function(d, i) {
             return Format((maxValue / cfg.levels) * (cfg.levels - i));
         });
@@ -180,15 +161,14 @@ function radarChart(id, data, options) {
             );
         })
         .attr("class", "line")
-        .style("stroke", "#dedede")
-        .style("stroke-width", "2px");
+        .style("stroke", style.circleStroke)
+        .style("stroke-width", style.axisStrokeWidth);
 
     //Append the labels at each axis
     axis.append("text")
         .attr("class", "legend")
-        .style("font-size", "11px")
         .attr("text-anchor", "middle")
-        .attr("dy", "0.35em")
+        .attr("dy", style.labelDY)
         .attr("x", function(d, i) {
             return (
                 rScale(maxValue * cfg.labelFactor) *
