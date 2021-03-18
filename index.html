@@ -16,6 +16,13 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"
             charset="utf-8"
         ></script>
+        <!-- Bootstrap (for modal) -->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
         <!-- lodash -->
         <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
@@ -32,17 +39,58 @@
                 <div class="radar-chart"></div>
             </div>
             <div class="player-info">
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                >
+                    Open modal
+                </button>
                 <div id="player-one-info" class="player-info"></div>
                 <div id="player-two-info" class="player-info"></div>
                 <div id="player-three-info" class="player-info"></div>
             </div>
         </div>
+        <hr />
         <script type="module" src="index.js"></script>
         <script type="module">
             import { index } from "./index.js";
             index();
         </script>
-        <hr />
+        <div class="modal modal-fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal Heading</h4>
+                        <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                        >
+                            &times;
+                        </button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Modal body..
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-danger"
+                            data-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
     <footer>
         Data analysis done by Carleen Markey and Nayan Patel. Original data,
