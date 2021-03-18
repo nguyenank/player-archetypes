@@ -3,7 +3,7 @@
 
 import { update } from "./update.js";
 
-function createPlayerInfo(id, selectId, data, emptyRowBool) {
+function createPlayerInfo(id, selectId, collapseId, data, emptyRowBool) {
     var pI = d3.select(id);
 
     // create dropdown button //
@@ -34,16 +34,45 @@ function createPlayerInfo(id, selectId, data, emptyRowBool) {
     createPlayerRow(id, "Position: ", "player-position");
     createPlayerRow(id, "Archetype: ", "player-archetype");
 
+    // dropdown button for indices //
     pI.append("hr");
+    var button = pI
+        .append("button")
+        .attr("type", "button")
+        .attr("class", "btn dropdown-button")
+        .attr("data-toggle", "collapse")
+        .attr("data-target", "#" + collapseId)
+        .attr("aria-expanded", false);
 
-    createPlayerRow(id, "Shot Index: ", "shot-index");
-    createPlayerRow(id, "PSA Index: ", "psa-index");
-    createPlayerRow(id, "Passing Index: ", "passing-index");
-    createPlayerRow(id, "Entry Index: ", "entry-index");
-    createPlayerRow(id, "Danger Pass Index: ", "danger-pass-index");
-    createPlayerRow(id, "Danger Shot Index: ", "danger-shot-index");
-    createPlayerRow(id, "Takeaways Index: ", "takeaways-index");
-    createPlayerRow(id, "Puck Recovery Index: ", "puck-recovery-index");
+    button.append("i").attr("class", "bi bi-caret-down-fill arrow-down");
+    button.append("i").attr("class", "bi bi-caret-up-fill arrow-up");
+
+    button.append("span").text(" Indices");
+
+    pI.append("div")
+        .attr("class", "collapse")
+        .attr("id", collapseId)
+        .append("hr");
+    createPlayerRow("#" + collapseId, "Shot Index: ", "shot-index");
+    createPlayerRow("#" + collapseId, "PSA Index: ", "psa-index");
+    createPlayerRow("#" + collapseId, "Passing Index: ", "passing-index");
+    createPlayerRow("#" + collapseId, "Entry Index: ", "entry-index");
+    createPlayerRow(
+        "#" + collapseId,
+        "Danger Pass Index: ",
+        "danger-pass-index"
+    );
+    createPlayerRow(
+        "#" + collapseId,
+        "Danger Shot Index: ",
+        "danger-shot-index"
+    );
+    createPlayerRow("#" + collapseId, "Takeaways Index: ", "takeaways-index");
+    createPlayerRow(
+        "#" + collapseId,
+        "Puck Recovery Index: ",
+        "puck-recovery-index"
+    );
 }
 
 // helper function for creating rows

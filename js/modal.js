@@ -1,14 +1,12 @@
 function createButton(id) {
-    d3.xml("../assets/funnel.svg", data => {
-        var div = d3
-            .select(id)
-            .attr("type", "button")
-            .attr("data-toggle", "modal")
-            .attr("data-target", "#filterModal")
-            .append("div");
-        div.node().append(data.documentElement);
-        div.append("span").text(" Filter Players");
-    });
+    var div = d3
+        .select(id)
+        .attr("type", "button")
+        .attr("data-toggle", "modal")
+        .attr("data-target", "#filterModal")
+        .append("div");
+    div.append("i").attr("class", "bi bi-funnel-fill");
+    div.append("span").text(" Filter Players");
 }
 
 function createModal(id) {

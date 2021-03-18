@@ -30,6 +30,7 @@ body {
 
 .radar-chart {
     flex-basis: 100%;
+    max-width: 100vh;
 }
 
 .radar-chart-wrapper {
@@ -54,6 +55,9 @@ body {
 }
 
 /* Player Info Styling  */
+
+.player-sidebar {
+}
 
 .player-info {
     font-size: 1.1em;
@@ -116,6 +120,7 @@ hr {
     border: 0;
     height: 0.15em;
     background: rgba(0, 0, 0, 0.1);
+    margin: 0.5em;
 }
 
 .header {
@@ -126,4 +131,24 @@ hr {
 
 .bold {
     font-weight: 400;
+}
+
+.dropdown-button {
+    padding: 0;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+/* https://stackoverflow.com/a/33496943 */
+
+button[aria-expanded="true"] .arrow-down {
+    display: none;
+}
+
+button[aria-expanded="false"] .arrow-up {
+    display: none;
+}
+
+button[aria-expanded="false"] .arrow-up {
+    display: none;
 }

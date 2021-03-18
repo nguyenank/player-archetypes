@@ -17,11 +17,24 @@ function index(radarChartOptions) {
     d3.csv("data/archetypes-data.csv", function(data) {
         createModal("#filterModal");
 
-        createPlayerInfo("#player-one-info", "player-one-select", data, false);
-        createPlayerInfo("#player-two-info", "player-two-select", data, true);
+        createPlayerInfo(
+            "#player-one-info",
+            "player-one-select",
+            "player-one-collapse",
+            data,
+            false
+        );
+        createPlayerInfo(
+            "#player-two-info",
+            "player-two-select",
+            "player-two-collapse",
+            data,
+            true
+        );
         createPlayerInfo(
             "#player-three-info",
             "player-three-select",
+            "player-three-collapse",
             data,
             true
         );
