@@ -110,12 +110,13 @@ body {
     padding: 0em 1em;
 }
 
+/* assorted */
+
 hr {
     border: 0;
+    height: 0.15em;
     background: rgba(0, 0, 0, 0.1);
 }
-
-/* assorted */
 
 .header {
     display: flex;

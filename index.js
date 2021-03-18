@@ -25,8 +25,13 @@ function index(radarChartOptions) {
             data,
             true
         );
+        $(document).ready(function() {
+            $(".select-dropdown").select2();
+        });
+        $("#player-one-info").on("select2:select", () => update(data));
+        $("#player-two-info").on("select2:select", () => update(data));
+        $("#player-three-info").on("select2:select", () => update(data));
 
-        /// initialize information for default player
         updatePlayerInfo("#player-one-info", data[0]);
         radarChart(".radar-chart", [transformRow(data[0])], radarChartOptions);
     });

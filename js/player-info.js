@@ -7,8 +7,10 @@ function createPlayerInfo(id, selectId, data, emptyRowBool) {
     var pI = d3.select(id);
 
     // create dropdown button //
-    var select = pI.append("select").attr("id", selectId);
-
+    var select = pI
+        .append("select")
+        .attr("id", selectId)
+        .attr("class", "select-dropdown");
     if (emptyRowBool) {
         select.append("option").text("");
     }
@@ -43,9 +45,6 @@ function createPlayerInfo(id, selectId, data, emptyRowBool) {
     createPlayerRow(id, "Takeaways Index: ", "takeaways-index");
     createPlayerRow(id, "Puck Recovery Index: ", "puck-recovery-index");
 
-    // link to update function
-    pI.on("change", () => update(data));
-
     // helper function for creating rows
     function createPlayerRow(id, text, className) {
         var pI = d3.select(id);
@@ -55,7 +54,6 @@ function createPlayerInfo(id, selectId, data, emptyRowBool) {
             .text(text);
         d.append("span").attr("class", className);
     }
-}
 
 function updatePlayerInfo(id, player) {
     var pI = d3.select(id);
@@ -77,7 +75,7 @@ function updatePlayerInfo(id, player) {
         pI.select(".player-position").text("");
         pI.select(".player-archetype").text("");
         pI.select(".shot-index").text("");
-        pI.select(".pIa-index").text("");
+        pI.select(".psa-index").text("");
         pI.select(".passing-index").text("");
         pI.select(".entry-index").text("");
         pI.select(".danger-pass-index").text("");
