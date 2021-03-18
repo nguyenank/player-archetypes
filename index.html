@@ -38,7 +38,9 @@
                 <div id="player-two-info" class="player-info"></div>
                 <div id="player-three-info" class="player-info"></div>
             </div>
-            <div class="radarChart"></div>
+            <div class="radar-chart-wrapper">
+                <div class="radarChart"></div>
+            </div>
         </div>
         <script type="module" src="index.js"></script>
         <script type="module">
@@ -48,22 +50,28 @@
             //////////////////////// Set-Up //////////////////////////////
             //////////////////////////////////////////////////////////////
             import { layout } from "./index.js";
+            // var margin = { top: 100, right: 100, bottom: 100, left: 100 },
+            //     width =
+            //         Math.min(700, window.innerWidth - 10) -
+            //         margin.left -
+            //         margin.right,
+            //     height = Math.min(
+            //         width,
+            //         window.innerHeight - margin.top - margin.bottom - 20
+            //     );
+            //
             var margin = { top: 100, right: 100, bottom: 100, left: 100 },
-                width =
-                    Math.min(700, window.innerWidth - 10) -
-                    margin.left -
-                    margin.right,
-                height = Math.min(
-                    width,
-                    window.innerHeight - margin.top - margin.bottom - 20
-                );
-
+                height = window.innerHeight - margin.top - margin.bottom - 20,
+                width = height;
             //////////////////////////////////////////////////////////////
             //////////////////// Draw the Chart //////////////////////////
             //////////////////////////////////////////////////////////////
 
+            var element = d3.select(".flexbox-column").node();
+            console.log(element.getBoundingClientRect().height);
+            console.log(element.getBoundingClientRect().width);
             var radarChartOptions = {
-                w: width,
+                w: 400,
                 h: height,
                 margin: margin,
                 maxValue: 1,

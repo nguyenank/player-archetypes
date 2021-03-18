@@ -1,6 +1,6 @@
 body {
     font-family: "Open Sans", sans-serif;
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 300;
     fill: #242424;
     text-align: center;
@@ -13,10 +13,6 @@ body {
         display: block;
     }
     .radarChart {
-        width: 100%;
-    }
-    .vertical-align {
-        align-items: center;
         width: 100%;
     }
 }
@@ -33,16 +29,6 @@ body {
 .player-info {
     padding: 0.2em;
     font-size: 1.1em;
-}
-
-.flexbox {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.flexbox-vertical {
-    display: flex;
-    flex-flow: vertical;
 }
 
 #player-one-select {
@@ -92,20 +78,34 @@ hr {
     font-weight: bold;
 }
 
-.vertical-align {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .header {
     display: flex;
     justify-content: center;
 }
 
+.flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.flexbox-column {
+    /* background-color: blue; */
+    flex-basis: 0;
+}
+
+.radar-chart-wrapper {
+    /* background-color: red; */
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .radarChart {
-    min-width: 45%;
-    flex-grow: 2;
+    width: 45%;
+    flex-basis: 70%;
+    /* background-color: green; */
 }
 
 h1 {
