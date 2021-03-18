@@ -7,88 +7,27 @@
 
 //// Modified by An Nguyen //////////////////////////////
 
-import {
-    createPlayerInfo,
-    updatePlayerInfo,
-    createDropdownButton,
-} from "./js/player-info.js";
+import { transformRow } from "./js/data.js";
+import { createPlayerInfo, updatePlayerInfo } from "./js/player-info.js";
 import { radarChart } from "./js/radar-chart.js";
+import { update } from "./js/update.js";
 
 function index(radarChartOptions) {
-    function transformRow(row) {
-        let indices = [
-            "Shot Index",
-            "PSA Index",
-            "Passing Index",
-            "Entry Index",
-            "Danger Pass Index",
-            "Danger Shot Index",
-            "Takeaways Index",
-            "Puck Recovery Index",
-        ];
-        if (!row) {
-            return _.map(indices, index => ({ axis: index, value: -1 }));
-        }
-        return _.map(indices, index => ({ axis: index, value: row[index] }));
-    }
     d3.csv("data/archetypes-data.csv", function(data) {
-        var firstRows = [transformRow(data[0]), transformRow(null)];
+        var playerNames = _.map(data, d => d.Player);
 
-        createDropdownButton(
-            "#player-one-info",
-            "player-one-select",
-            data,
-            false
-        );
-
-        createDropdownButton(
-            "#player-two-info",
-            "player-two-select",
-            data,
-            true
-        );
-
-        createDropdownButton(
+        createPlayerInfo("#player-one-info", "player-one-select", data, false);
+        createPlayerInfo("#player-two-info", "player-two-select", data, true);
+        createPlayerInfo(
             "#player-three-info",
             "player-three-select",
             data,
             true
         );
 
-        createPlayerInfo("#player-one-info");
-        createPlayerInfo("#player-two-info");
-        createPlayerInfo("#player-three-info");
+        /// initialize information for default player
         updatePlayerInfo("#player-one-info", data[0]);
-        radarChart(".radar-chart", firstRows, radarChartOptions);
-
-        function update() {
-            var playerOneSelect = d3
-                .select("#player-one-select")
-                .property("value");
-            var playerTwoSelect = d3
-                .select("#player-two-select")
-                .property("value");
-            var playerThreeSelect = d3
-                .select("#player-three-select")
-                .property("value");
-            var rows = [
-                transformRow(data[playerOneSelect]),
-                transformRow(data[playerTwoSelect]),
-                transformRow(data[playerThreeSelect]),
-            ];
-            radarChart(".radar-chart", rows, radarChartOptions);
-            updatePlayerInfo("#player-one-info", data[playerOneSelect]);
-            if (playerTwoSelect) {
-                updatePlayerInfo("#player-two-info", data[playerTwoSelect]);
-            }
-            if (playerThreeSelect) {
-                updatePlayerInfo("#player-three-info", data[playerThreeSelect]);
-            }
-        }
-
-        d3.select("#player-one-select").on("change", update);
-        d3.select("#player-two-select").on("change", update);
-        d3.select("#player-three-select").on("change", update);
+        radarChart(".radar-chart", [transformRow(data[0])], radarChartOptions);
     });
 }
 
