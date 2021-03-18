@@ -38,15 +38,32 @@ function index(radarChartOptions) {
             data,
             true
         );
+
+        // iniitialize with first player
+        updatePlayerInfo("#player-one-info", data[0]);
+        radarChart(".radar-chart", [transformRow(data[0])], radarChartOptions);
+
+        // all of the jQuery hooks
         $(document).ready(function() {
-            $(".select-dropdown").select2();
+            $("#player-one-select").select2({
+                selectionCssClass: "player-one-select",
+                width: "100%",
+                dropdownCssClass: "player-one-dropdown",
+            });
+            $("#player-two-select").select2({
+                selectionCssClass: "player-two-select",
+                width: "100%",
+                dropdownCssClass: "player-two-dropdown",
+            });
+            $("#player-three-select").select2({
+                selectionCssClass: "player-three-select",
+                width: "100%",
+                dropdownCssClass: "player-three-dropdown",
+            });
         });
         $("#player-one-info").on("select2:select", () => update(data));
         $("#player-two-info").on("select2:select", () => update(data));
         $("#player-three-info").on("select2:select", () => update(data));
-
-        updatePlayerInfo("#player-one-info", data[0]);
-        radarChart(".radar-chart", [transformRow(data[0])], radarChartOptions);
     });
 }
 

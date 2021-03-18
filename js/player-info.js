@@ -6,14 +6,15 @@ import { update } from "./update.js";
 function createPlayerInfo(id, selectId, collapseId, data, emptyRowBool) {
     var pI = d3.select(id);
 
-    // create dropdown button //
+    // create player name button //
     var select = pI
         .append("select")
         .attr("id", selectId)
         .attr("class", "select-dropdown");
     if (emptyRowBool) {
-        select.append("option").text("");
+        select.append("option").text(" ");
     }
+
     select
         .selectAll("option")
         .data(data)
@@ -22,7 +23,7 @@ function createPlayerInfo(id, selectId, collapseId, data, emptyRowBool) {
         .text(d => d.Player)
         .attr("value", (d, i) => i);
 
-    // create rest of player info //
+    // create default information //
     pI.append("hr");
 
     pI.append("span")
@@ -49,6 +50,7 @@ function createPlayerInfo(id, selectId, collapseId, data, emptyRowBool) {
 
     button.append("span").text(" Indices");
 
+    // create collapsed window for indices //
     pI.append("div")
         .attr("class", "collapse")
         .attr("id", collapseId)
@@ -101,7 +103,7 @@ function updatePlayerInfo(id, player) {
         pI.select(".puck-recovery-index").text(player["Puck Recovery Index"]);
     } else {
         // if no player, blank out info
-        pI.select(".player-team").text("");
+        pI.select(".player-team").text("Team");
         pI.select(".player-position").text("");
         pI.select(".player-archetype").text("");
         pI.select(".shot-index").text("");
