@@ -33,111 +33,17 @@
             <h1>Women's Hockey Archetypes</h1>
         </div>
         <div class="flexbox">
-            <div class="vertical-align">
-                <div id="left-player" class="player-info">
-                    <select id="selectLeft"></select>
-                    <hr />
-                    <span class="player-team bold">Team</span>
-                    <hr />
-                    <div>
-                        <span class="bold">Position: </span
-                        ><span class="player-position"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Archetype: </span
-                        ><span class="player-archetype"></span>
-                    </div>
-                    <hr />
-                    <div>
-                        <span class="bold">Shot Index: </span
-                        ><span class="shot-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">PSA Index: </span
-                        ><span class="psa-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Passing Index: </span
-                        ><span class="passing-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Entry Index: </span
-                        ><span class="entry-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Danger Pass Index: </span
-                        ><span class="danger-pass-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Danger Shot Index: </span
-                        ><span class="danger-shot-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Takeaways Index: </span
-                        ><span class="takeaways-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Puck Recovery Index: </span
-                        ><span class="puck-recovery-index"></span>
-                    </div>
-                </div>
-                <div id="player-three" class="player-info">
-                    <select id="select-three"></select>
-                    <hr />
-                    <div id="player-three-info"></div>
-                </div>
+            <div id="player-one" class="player-info">
+                <div id="player-one-info"></div>
             </div>
-            <div class="radarChart"></div>
-            <div class="vertical-align">
-                <div id="right-player" class="player-info">
-                    <select id="selectRight"></select>
-                    <hr />
-                    <span class="player-team bold">Team</span>
-                    <hr />
-                    <div>
-                        <span class="bold">Position: </span
-                        ><span class="player-position"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Archetype: </span
-                        ><span class="player-archetype"></span>
-                    </div>
-                    <hr />
-                    <div>
-                        <span class="bold">Shot Index: </span
-                        ><span class="shot-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">PSA Index: </span
-                        ><span class="psa-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Passing Index: </span
-                        ><span class="passing-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Entry Index: </span
-                        ><span class="entry-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Danger Pass Index: </span
-                        ><span class="danger-pass-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Danger Shot Index: </span
-                        ><span class="danger-shot-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Takeaways Index: </span
-                        ><span class="takeaways-index"></span>
-                    </div>
-                    <div>
-                        <span class="bold">Puck Recovery Index: </span
-                        ><span class="puck-recovery-index"></span>
-                    </div>
-                </div>
+            <div id="player-two" class="player-info">
+                <div id="player-two-info"></div>
+            </div>
+            <div id="player-three" class="player-info">
+                <div id="player-three-info"></div>
             </div>
         </div>
+        <div class="radarChart"></div>
         <script type="module" src="index.js"></script>
         <script type="module">
             /* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
@@ -166,7 +72,7 @@
                 margin: margin,
                 maxValue: 1,
                 levels: 5,
-                color: ["#12918F", "#EA7648", "#62246B"],
+                color: ["#35aba9", "#ea8e48", "#9659b5"],
                 roundStrokes: false,
                 opacityArea: 0.4,
             };

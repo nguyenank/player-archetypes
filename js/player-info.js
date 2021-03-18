@@ -7,8 +7,28 @@ function createPlayerRow(id, text, className) {
     d.append("span").attr("class", className);
 }
 
+function createDropdownButton(id, selectId, data, emptyRowBool) {
+    var pI = d3.select(id);
+    var select = pI.append("select").attr("id", selectId);
+
+    if (emptyRowBool) {
+        select.append("option").text("");
+    }
+
+    select
+        .selectAll("option")
+        .data(data)
+        .enter()
+        .append("option")
+        .text(d => d.Player)
+        .attr("value", (d, i) => i);
+}
+
 function createPlayerInfo(id) {
     var pI = d3.select(id);
+
+    pI.append("hr");
+
     pI.append("span")
         .attr("class", "bold")
         .attr("id", "player-team")
@@ -26,6 +46,7 @@ function createPlayerInfo(id) {
     createPlayerRow(id, "Takeaways Index: ", "takeaways-index");
     createPlayerRow(id, "Puck Recovery Index: ", "puck-recovery-index");
 }
+
 function updatePlayerInfo(id, player) {
     var pS = d3.select(id);
     pS.select(".player-team").text(player.Team);
@@ -41,4 +62,4 @@ function updatePlayerInfo(id, player) {
     pS.select(".puck-recovery-index").text(player["Puck Recovery Index"]);
 }
 
-export { createPlayerInfo, updatePlayerInfo };
+export { createPlayerInfo, updatePlayerInfo, createDropdownButton };

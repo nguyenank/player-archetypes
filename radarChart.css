@@ -40,34 +40,34 @@ body {
     flex-wrap: wrap;
 }
 
-#selectLeft {
+#player-one-select {
     font-size: 1.5em;
-    background-color: rgba(18, 145, 143, 0.4);
+    background-color: rgba(53, 171, 169, 0.4);
 }
 
-#left-player {
-    background-color: rgba(18, 145, 143, 0.4);
-    border: 0.2em solid rgba(18, 145, 143, 1);
+#player-one {
+    background-color: rgba(53, 171, 169, 0.4);
+    border: 0.2em solid rgba(53, 171, 169, 1);
 }
 
-#selectRight {
+#player-two-select {
     font-size: 1.5em;
-    background-color: rgba(234, 118, 72, 0.4);
+    background-color: rgba(234, 142, 72, 0.4);
 }
 
-#right-player {
-    background-color: rgba(234, 118, 72, 0.4);
-    border: 0.2em solid rgba(234, 118, 72, 1);
+#player-two {
+    background-color: rgba(234, 142, 72, 0.4);
+    border: 0.2em solid rgba(234, 142, 72, 1);
 }
 
-#select-three {
+#player-three-select {
     font-size: 1.5em;
-    background-color: rgba(83, 36, 107, 0.4);
+    background-color: rgba(150, 89, 181, 0.4);
 }
 
 #player-three {
-    background-color: rgba(83, 36, 107, 0.4);
-    border: 0.2em solid rgba(83, 36, 107, 1);
+    background-color: rgba(150, 89, 181, 0.4);
+    border: 0.2em solid rgba(150, 89, 181, 1);
 }
 
 hr {
