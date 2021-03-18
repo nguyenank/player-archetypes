@@ -31,10 +31,10 @@ function createPlayerInfo(id) {
 
     pI.append("span")
         .attr("class", "bold")
-        .attr("id", "player-team")
+        .attr("class", "player-team")
         .text("Team");
     pI.append("hr");
-    createPlayerRow(id, "Position: ", "player-team");
+    createPlayerRow(id, "Position: ", "player-position");
     createPlayerRow(id, "Archetype: ", "player-archetype");
     pI.append("hr");
     createPlayerRow(id, "Shot Index: ", "shot-index");
