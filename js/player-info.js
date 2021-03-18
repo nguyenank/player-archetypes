@@ -44,16 +44,17 @@ function createPlayerInfo(id, selectId, data, emptyRowBool) {
     createPlayerRow(id, "Danger Shot Index: ", "danger-shot-index");
     createPlayerRow(id, "Takeaways Index: ", "takeaways-index");
     createPlayerRow(id, "Puck Recovery Index: ", "puck-recovery-index");
+}
 
-    // helper function for creating rows
-    function createPlayerRow(id, text, className) {
-        var pI = d3.select(id);
-        let d = pI.append("div");
-        d.append("span")
-            .attr("class", "bold")
-            .text(text);
-        d.append("span").attr("class", className);
-    }
+// helper function for creating rows
+function createPlayerRow(id, text, className) {
+    var pI = d3.select(id);
+    let d = pI.append("div");
+    d.append("span")
+        .attr("class", "bold")
+        .text(text);
+    d.append("span").attr("class", className);
+}
 
 function updatePlayerInfo(id, player) {
     var pI = d3.select(id);
