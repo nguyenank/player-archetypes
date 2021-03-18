@@ -15,7 +15,7 @@ import { createModal } from "./js/modal.js";
 
 function index(radarChartOptions) {
     d3.csv("data/archetypes-data.csv", function(data) {
-        createModal("#filterModal");
+        // createModal("#filterModal", data);
 
         createPlayerInfo(
             "#player-one-info",
