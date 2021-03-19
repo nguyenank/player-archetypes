@@ -11,12 +11,9 @@ import { transformRow } from "./js/data.js";
 import { createPlayerInfo, updatePlayerInfo } from "./js/player-info.js";
 import { radarChart } from "./js/radar-chart.js";
 import { update } from "./js/update.js";
-import { createModal } from "./js/modal.js";
 
 function index(radarChartOptions) {
     d3.csv("data/archetypes-data.csv", function(data) {
-        // createModal("#filterModal", data);
-
         createPlayerInfo(
             "#player-one-info",
             "player-one-select",
