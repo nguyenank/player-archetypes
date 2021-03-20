@@ -16,7 +16,7 @@ function createPlayerInfo(id, selectId, collapseId, data, emptyRowBool) {
     }
 
     select
-        .selectAll("option")
+        .selectAll("options") // make sure doesn't overwrite existing blank option
         .data(data)
         .enter()
         .append("option")
