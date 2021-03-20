@@ -13,7 +13,7 @@ import { radarChart } from "./js/radar-chart.js";
 import { update } from "./js/update.js";
 
 function index(radarChartOptions) {
-    d3.csv("data/archetypes-data.csv", function(data) {
+    d3.csv("resources/archetypes-data.csv", function(data) {
         createPlayerInfo(
             "#player-one-info",
             "player-one-select",
