@@ -35,6 +35,9 @@ function radarChart(id, data) {
     ///////////////////////// Calculations///////////////////
     /////////////////////////////////////////////////////////
 
+    // adjust number of circle levels and max axis value
+    // based on actual max value in the data
+
     var maxValue = 1;
     // cfg.levels = 4 initially
 
@@ -53,6 +56,8 @@ function radarChart(id, data) {
         maxValue = Math.ceil(actualMax);
         cfg.levels *= maxValue;
         if (maxValue > 5) {
+            // cap number of circle levels at 20
+            // any actual max values beteen 5-9 get bumped to overall max of 9
             maxValue = 9;
             cfg.levels = 20;
         }
