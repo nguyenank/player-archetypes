@@ -11,7 +11,7 @@ function radarChart(id, data) {
         w: 600, //Width of the circle
         h: 600, //Height of the circle
         margin: { top: 125, right: 125, bottom: 125, left: 125 }, //The margins of the SVG
-        levels: 5, //How many levels or inner circles should there be drawn
+        levels: 4, //How many levels or inner circles should there be drawn
         labelFactor: 1.25, //How much farther than the radius of the outer circle should the labels be placed
         wrapWidth: 80, //The number of pixels after which a label needs to be given a new line
         opacityArea: 0.4, //The opacity of the area of the blob
@@ -35,10 +35,9 @@ function radarChart(id, data) {
     ///////////////////////// Calculations///////////////////
     /////////////////////////////////////////////////////////
 
-    // If actual < 0.1, maxValue = 0.2
-    // if actual > 1, maxValue = actual
-    // otherwise actual = 1
     var maxValue = 1;
+    // cfg.levels = 4 initially
+
     var actualMax = d3.max(data, function(i) {
         return d3.max(
             i.map(function(o) {
@@ -46,11 +45,17 @@ function radarChart(id, data) {
             })
         );
     });
-    if (actualMax < 0.1) {
-        maxValue = 0.2;
+    if (actualMax < 0.5) {
+        maxValue = 0.5;
+        cfg.levels = 2;
     }
     if (actualMax > maxValue) {
-        maxValue = actualMax;
+        maxValue = Math.ceil(actualMax);
+        cfg.levels *= maxValue;
+        if (maxValue > 5) {
+            maxValue = 9;
+            cfg.levels = 20;
+        }
     }
 
     var allAxis = data[0].map(function(i, j) {
